@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import LandingPage from './pages/LandingPage'
 import AuthPage from './pages/AuthPage'
-import HomePage from './pages/HomePage'
+import HomePage from './pages/HomePage/HomePage'
 
 function App() {
 
