@@ -1,29 +1,31 @@
 import { NavLink } from "react-router-dom";
-
-
-
-
-
-
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 
 function Navbar() {
-   
-    
-    return (
-      <div className="sticky top-0 z-[1000] bg-blue-700 text-white">
-      <div  className="w-[100vw] flex justify-between items-center px-2 py-2 font-semibold">
+  return (
+    <div className="sticky top-0 z-[1000] bg-blue-700 text-white">
+      <div className="w-[100vw] flex justify-between items-center px-2 py-2 font-semibold">
         <div>
           <div className="px-4 py-2 hidden sm:flex">
-              <NavLink to={"/"} className="text-2xl hover:text-[#fd9b40] transition duration-300 cursor-pointer"> YouPromoter </NavLink>
+            <NavLink to={"/"} className="text-2xl hover:text-[#fd9b40] transition duration-300 cursor-pointer"> YouPromoter </NavLink>
           </div>
         </div>
         <div className="flex ">
           <div className="px-4 py-2 cursor-pointer">
             <NavLink to={"/home"} className="text-2xl hover:text-[#fd9b40] transition duration-300 cursor-pointer"> Home </NavLink>
-              
           </div>
           <div className="px-4 py-2">
-              <NavLink to={"/price"} className="text-2xl hover:text-[#fd9b40] transition duration-300 cursor-pointer"> Price </NavLink>
+            <NavLink to={"/price"} className="text-2xl hover:text-[#fd9b40] transition duration-300 cursor-pointer"> Price </NavLink>
+          </div>
+          <div className="px-4 py-2">
+            <SignedOut>
+              <SignInButton>
+                <p className="text-2xl hover:text-[#fd9b40] transition duration-300 cursor-pointer"> Get Started </p>
+              </SignInButton>
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
           </div>
         </div>
       </div>
@@ -47,8 +49,8 @@ function Navbar() {
             
           </div>
       </div> */}
-  </div>
-    );
+    </div>
+  );
 }
 
 export default Navbar;
