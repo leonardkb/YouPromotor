@@ -6,6 +6,7 @@ import './App.css'
 import LandingPage from './pages/LandingPage'
 import AuthPage from './pages/AuthPage'
 import HomePage from './pages/HomePage/HomePage'
+import VideoDetailsPage from './pages/HomePage/VideoDetailsPage'
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/home" element={<HomePage />} />
         <Route path="*" element={<div>Not Found</div>} />
+        <Route path="/video/:id" element={<VideoDetailsPage />} />
       </Routes>
     </>
   )
